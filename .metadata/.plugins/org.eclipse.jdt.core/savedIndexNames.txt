@@ -1,4 +1,0 @@
-INDEX VERSION 1.127+E:\Android Games\.metadata\.plugins\org.eclipse.jdt.core
-3495176769.index
-3782973173.index
-769091562.index
