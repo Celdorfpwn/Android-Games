@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_weight="5" >
+        </TableRow>
+
+       <TableRow
+            android:layout_width="fill_parent"
+            android:layout_weight="10" >
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/reset"
+                android:onClick="resetGame"
+                android:textColor="@color/White" >
+            </Button>
+
+            <TextView
+                android:id="@+id/counterTextView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="2" >
+            </TextView>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_weight="5" >
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_weight="65" >
+
+            <TableLayout
+                android:id="@+id/game_table"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/Black" >
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_weight="20" >
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_weight="20" >
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_weight="20" >
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_weight="20" >
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_weight="20" >
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+
+                    <Button
+                        android:layout_height="match_parent"
+                        android:layout_weight="20"
+                        android:onClick="numberClick"
+                        android:textColor="@color/White" >
+                    </Button>
+                </TableRow>
+            </TableLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_weight="15" >
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>
