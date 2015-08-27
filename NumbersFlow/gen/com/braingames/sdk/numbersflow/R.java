@@ -163,15 +163,18 @@ public final class R {
     public static final class layout {
         public static final int game_page=0x7f030000;
         public static final int main_page=0x7f030001;
+        public static final int score_page=0x7f030002;
     }
     public static final class string {
         public static final int app_name=0x7f050000;
+        public static final int congrats=0x7f050007;
         public static final int hello_world=0x7f050001;
         public static final int play=0x7f050002;
         public static final int quit=0x7f050004;
         public static final int records=0x7f050003;
         public static final int replay=0x7f050006;
         public static final int reset=0x7f050005;
+        public static final int youreached=0x7f050008;
     }
     public static final class style {
         /** 
@@ -200,5 +203,7 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f060001;
+        public static final int GameButton=0x7f060002;
+        public static final int GameRow=0x7f060003;
     }
 }

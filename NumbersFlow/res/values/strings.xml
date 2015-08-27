@@ -7,4 +7,6 @@
     <string name="quit">Quit</string>
     <string name="reset">Reset</string>
     <string name="replay">Replay</string>
+    <string name="congrats">Congratulations</string>
+    <string name="youreached">You reached</string>
 </resources>

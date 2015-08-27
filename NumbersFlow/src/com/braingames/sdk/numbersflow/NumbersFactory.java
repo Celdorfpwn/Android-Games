@@ -29,6 +29,15 @@ public class NumbersFactory {
 
 		return numbers;
 	}
+	
+	public Integer getScore(){
+		if(_nextNumber > 1){
+			return _nextNumber - 1;
+		}
+		else{
+			return 1;
+		}
+	}
 
 	public Integer nextNumber() {
 		if (_currentList.isEmpty()) {
@@ -48,7 +57,7 @@ public class NumbersFactory {
 			int randomIndex = 0;
 
 			if (orderedNumbers.size() > 1) {
-				randomIndex = rand.nextInt(orderedNumbers.size() - 1);
+				randomIndex = rand.nextInt(orderedNumbers.size());
 			}
 			else
 			{
