@@ -26,6 +26,21 @@
     <item name="android:textSize">20sp</item>
 </style>
 
+<style name="ScoreRow">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_weight">20</item>
+    <item name="android:background">@color/LightGrey</item>
+    <item name="android:orientation">vertical</item>
+</style>
+
+<style name="ScoreTextView">
+    <item name="android:layout_weight">1</item>
+    <item name="android:padding">1dp</item>
+    <item name="android:textColor">@color/White</item>
+    <item name="android:layout_gravity">center</item>
+    <item name="android:gravity">center</item>
+</style>
+
 <style name="GameRow">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_weight">23</item>

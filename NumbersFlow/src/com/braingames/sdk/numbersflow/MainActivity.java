@@ -3,9 +3,13 @@ package com.braingames.sdk.numbersflow;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import android.R.color;
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.ContextThemeWrapper;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
@@ -93,6 +97,35 @@ public class MainActivity extends Activity {
 		_database.addContact(new Score(Integer.toString((_numbersFactory.getScore())),new SimpleDateFormat("yyyy-MM-dd").format(new Date())));
 		score.setText("Number "+ _numbersFactory.getScore());
 		_gameButtons = null;
+		populateScoresTable(_numbersFactory.getScore().intValue());
+	}
+	
+	private void populateScoresTable(int score){
+		
+		ArrayList<TextView> textViews = new ArrayList<TextView>();
+		textViews.add((TextView)findViewById(R.id.score1));
+		textViews.add((TextView)findViewById(R.id.score2));
+		textViews.add((TextView)findViewById(R.id.score3));
+		textViews.add((TextView)findViewById(R.id.score4));
+		textViews.add((TextView)findViewById(R.id.score5));
+		
+		TableLayout table = (TableLayout)findViewById(R.id.table_scores);
+		
+		List<Score> scores = _database.getFirstFiveScores();
+		int index = 0;
+		for(TextView text : textViews){
+			if(index < scores.size()){
+				int parsedScore = Integer.parseInt(scores.get(index)._score);
+				
+				if(parsedScore == score){
+					TableRow row = (TableRow)text.getParent();
+					row.setBackgroundResource(R.color.Orange);
+				}
+				
+				text.setText(scores.get(index)._score);
+				index++;
+			}
+		}
 	}
 
 	public void replayClick(View viewButton) {
