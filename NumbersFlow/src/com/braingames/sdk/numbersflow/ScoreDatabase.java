@@ -74,7 +74,7 @@ public class ScoreDatabase extends SQLiteOpenHelper {
 		Collections.sort(contactList);
 		
 		// return contact list
-		if (contactList.size() >= 4) {
+		if (contactList.size() >= 5) {
 			return contactList.subList(0, 5);
 		}else{
 			return contactList.subList(0, contactList.size());
@@ -101,7 +101,7 @@ public class ScoreDatabase extends SQLiteOpenHelper {
 		                return true;
 		            }
 		        }
-		        return false;
+		        return false; 
 		    }
 	}
 }

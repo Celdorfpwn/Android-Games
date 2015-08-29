@@ -23,6 +23,36 @@
             android:layout_centerInParent="true"
             android:orientation="vertical" >
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/congrats"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/youreached"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/counterTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="30sp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="replayClick"
+                android:text="@string/replay"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp" />
+
             <TableLayout
                 android:id="@+id/table_scores"
                 android:layout_width="match_parent"
@@ -39,74 +69,51 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="1dp"
+                        android:textSize="25sp"
                         android:text="@string/topScores"
                         android:textColor="@color/White" />
                 </TableRow>
 
                 <TableRow style="@style/ScoreRow" >
 
-                    <TextView 
-                        style="@style/ScoreTextView"
-                        android:id="@+id/score1" >
+                    <TextView
+                        android:id="@+id/score1"
+                        style="@style/ScoreTextView" >
                     </TextView>
                 </TableRow>
 
                 <TableRow style="@style/ScoreRow" >
 
-                    <TextView style="@style/ScoreTextView"
-                        android:id="@+id/score2"  >
+                    <TextView
+                        android:id="@+id/score2"
+                        style="@style/ScoreTextView" >
                     </TextView>
                 </TableRow>
 
                 <TableRow style="@style/ScoreRow" >
 
-                    <TextView style="@style/ScoreTextView" 
-                        android:id="@+id/score3" >
+                    <TextView
+                        android:id="@+id/score3"
+                        style="@style/ScoreTextView" >
                     </TextView>
                 </TableRow>
 
                 <TableRow style="@style/ScoreRow" >
 
-                    <TextView style="@style/ScoreTextView"
-                        android:id="@+id/score4"  >
+                    <TextView
+                        android:id="@+id/score4"
+                        style="@style/ScoreTextView" >
                     </TextView>
                 </TableRow>
 
                 <TableRow style="@style/ScoreRow" >
 
-                    <TextView style="@style/ScoreTextView"
-                        android:id="@+id/score5"  >
+                    <TextView
+                        android:id="@+id/score5"
+                        style="@style/ScoreTextView" >
                     </TextView>
                 </TableRow>
             </TableLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/congrats"
-                android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/youreached"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/counterTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="20sp" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="replayClick"
-                android:text="@string/replay"
-                android:textSize="15sp" />
         </LinearLayout>
     </RelativeLayout>
 

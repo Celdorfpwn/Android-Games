@@ -14,19 +14,13 @@ public class CountDowner {
 	private final int _start = 60;
 
 	private int _current;
+	
+	private boolean _isRunning = false;
 
 	public CountDowner(TextView textView, MainActivity activity) {
 		_textView = textView;
 		_activity = activity;
-	}
-	
-	public void setTextView(TextView textView){
-		_textView = textView;
-	}
-
-	public void start() {
-		_current = _start;
-
+		
 		_timer = new CountDownTimer(30000000, 1000) {
 			public void onTick(long millisUntilFinished) {
 				if (_current <= 0) {
@@ -39,11 +33,25 @@ public class CountDowner {
 
 			public void onFinish() {
 				_activity.showFinalScore();
-				_timer.cancel();
+				_isRunning = false;
 			}
 		};
+	}
+	
+	public void setTextView(TextView textView){
+		_textView = textView;
+	}
 
+	public void start() {
+		_current = _start;
+		_isRunning = true;
 		_timer.start();
+	}
+	
+	public void restart(TextView textView){
+		_textView = textView;
+		_isRunning = true;
+		start();
 	}
 
 	public void reset() {
