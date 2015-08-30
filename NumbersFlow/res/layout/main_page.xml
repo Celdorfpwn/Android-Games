@@ -25,17 +25,19 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="playClick"
-                android:text="@string/play" />
+                android:onClick="classicModeClick"
+                android:text="@string/classic" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/records" />
+                android:onClick="rainbowModeClick"
+                android:text="@string/disco" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="quitGameClick"
                 android:text="@string/quit" />
         </LinearLayout>
     </RelativeLayout>
