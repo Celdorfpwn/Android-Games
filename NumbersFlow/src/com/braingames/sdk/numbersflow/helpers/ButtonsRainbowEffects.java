@@ -3,11 +3,12 @@ package com.braingames.sdk.numbersflow.helpers;
 import java.util.ArrayList;
 import java.util.Random;
 
+import com.braingames.sdk.numbersflow.R;
+
 import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.view.View;
-
-import com.braingames.sdk.numbersflow.R;
+import android.widget.Button;
 
 public class ButtonsRainbowEffects {
 
@@ -57,7 +58,10 @@ public class ButtonsRainbowEffects {
 				@Override
 				public void onTick(long arg0) {
 					int color = Color.argb(255, _random.nextInt(256), _random.nextInt(256), _random.nextInt(256));   
+					int fontColor = Color.argb(255, _random.nextInt(256), _random.nextInt(256), _random.nextInt(256)); 
 					_button.setBackgroundColor(color);
+					Button button = (Button)_button;
+					button.setTextColor(fontColor);
 				}
 
 				@Override
