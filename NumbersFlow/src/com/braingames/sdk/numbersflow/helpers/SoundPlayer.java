@@ -26,9 +26,20 @@ public class SoundPlayer {
 		_wrongPlayer = MediaPlayer.create(context, R.raw.wrong);
 		_rainbowPlayer = MediaPlayer.create(context, R.raw.rainbowsong);
 		_rainbowPlayer.setVolume(0.3f, 0.4f);
-		updateSoundSettings();
+		initSoundButton();
 	}
 
+	
+	private void initSoundButton(){
+		boolean soundSettings = ApplicationSettings.getSoundStatus(_context);
+		if (soundSettings) {
+			_soundButton.setImageResource(R.drawable.enabled);
+		} else {
+			_soundButton.setImageResource(R.drawable.disabled);
+		}
+		_soundEnabled = soundSettings;
+	}
+	
 	public void updateSoundSettings() {
 		boolean soundSettings = ApplicationSettings.getSoundStatus(_context);
 
