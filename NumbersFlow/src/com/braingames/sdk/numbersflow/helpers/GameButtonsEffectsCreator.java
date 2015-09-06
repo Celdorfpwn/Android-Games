@@ -13,13 +13,13 @@ public class GameButtonsEffectsCreator {
 
 	private ArrayList<View> _buttons;
 
-	private ArrayList<ButtonEffect> _correctEffects;
+	private ArrayList<CorrectEffect> _correctEffects;
 
 	private ArrayList<ButtonEffect> _wrongEffects;
 
 	public GameButtonsEffectsCreator(ArrayList<View> buttons) {
 		_buttons = buttons;
-		_correctEffects = new ArrayList<ButtonEffect>();
+		_correctEffects = new ArrayList<CorrectEffect>();
 		_wrongEffects = new ArrayList<ButtonEffect>();
 		for (View button : _buttons) {
 			_correctEffects.add(new CorrectEffect(button));
@@ -35,10 +35,10 @@ public class GameButtonsEffectsCreator {
 		}
 	}
 
-	public void correctEffect(View button) {
+	public void correctEffect(View button,String text) {
 		int index = _buttons.indexOf(button);
 		
-		_correctEffects.get(index).start();
+		_correctEffects.get(index).start(text);
 	}
 
 	public void wrongEffect(View button) {
@@ -49,12 +49,14 @@ public class GameButtonsEffectsCreator {
 
 	
 	protected abstract class ButtonEffect {
-		private View _button;
+		protected View _button;
 
-		private boolean _isRunning = false;
+		protected boolean _isRunning = false;
 
-		private CountDownTimer _timer;
+		protected CountDownTimer _timer;
 
+		public ButtonEffect(){}
+		
 		public ButtonEffect(View button) {
 			_button = button;
 			_timer = new CountDownTimer(700, 50) {
@@ -93,13 +95,36 @@ public class GameButtonsEffectsCreator {
 	
 	protected class CorrectEffect extends ButtonEffect {
 
+		protected String _text;
+		
 		public CorrectEffect(View button) {
-			super(button);
+			_button = button;
+			_timer = new CountDownTimer(700, 50) {
+
+				@Override
+				public void onTick(long arg0) {
+					// TODO Auto-generated method stub
+
+				}
+
+				@Override
+				public void onFinish() {
+					((Button)_button).setText(_text);
+					_button.setBackgroundResource(R.color.Black);
+					_isRunning = false;
+				}
+			};
+
 		}
 
 		
 		protected int setEffectBackground() {
 			return R.color.Green;	
+		}
+		
+		public void start(String text){
+			_text = text;
+			super.start();
 		}
 		
 	}

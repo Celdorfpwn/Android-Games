@@ -31,25 +31,58 @@ public abstract class GameMode extends Activity {
 	
 	protected SoundPlayer _soundPlayer;
 	
+	protected GameModesEnum _gameMode;
+	
 	protected ScoreDatabase _database = new ScoreDatabase(this);
 	
-	public abstract void showFinalScore();
+	
+	protected abstract void setGameModeEnum();
+	
+	protected abstract void endGame();
+	
+	
+	protected abstract void numberClick(View viewButton);
+	
+	protected abstract void replayGame();
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.game_page);
-		
 		_soundPlayer = new SoundPlayer(this,(ImageButton)findViewById(R.id.soundButton));		
 	}
 	
 	protected void initializeGame() {
 		_numbersFactory = new NumbersFactory();
+		setGameModeEnum();
 		initializeButtonsList();
 		initializeButtonsText();
 		_countDowner = new CountDowner(
 				(TextView) findViewById(R.id.counterTextView), this);
-		_countDowner.start();
+		_countDowner.start(); 
 	}
+	
+	public void replayClick(View viewButton) {
+		setContentView(R.layout.game_page);
+		initializeButtonsList();
+		initializeButtonsText();
+		replayGame();
+		_countDowner.restart((TextView) findViewById(R.id.counterTextView));
+		_countDowner.reset();
+	}
+
+	
+	public void showFinalScore() {
+		endGame();
+		setContentView(R.layout.score_page);
+		TextView score = (TextView) findViewById(R.id.counterTextView);
+		_database.addContact(new Score(Integer.toString((_numbersFactory
+				.getScore())), _gameMode.toString()));
+		score.setText("Number " + _numbersFactory.getScore());
+		_gameButtons = null;
+		_soundPlayer.finishSounds();
+		populateScoresTable(_numbersFactory.getScore().intValue());
+	}
+	
 	
 	public void soundClick(View button){
 		_soundPlayer.updateSoundSettings();
@@ -76,7 +109,7 @@ public abstract class GameMode extends Activity {
 
 			for (int buttonIndex = 0; buttonIndex < row.getChildCount(); buttonIndex++) {
 				Button button = (Button)row.getChildAt(buttonIndex);
-				button.setTextSize(height/40);
+				button.setTextSize(height/35);
 				_gameButtons.add(row.getChildAt(buttonIndex));
 			}
 		}
@@ -93,7 +126,7 @@ public abstract class GameMode extends Activity {
 
 		TableLayout table = (TableLayout) findViewById(R.id.table_scores);
 
-		List<Score> scores = _database.getFirstFiveScores(GameModesEnum.CLASSIC);
+		List<Score> scores = _database.getFirstFiveScores(_gameMode);
 		int index = 0;
 		if (scores.size() > 0) {
 			for (TextView text : textViews) {

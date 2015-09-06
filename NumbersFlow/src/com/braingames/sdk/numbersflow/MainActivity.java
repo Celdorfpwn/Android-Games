@@ -20,13 +20,22 @@ public class MainActivity extends Activity {
 		startActivity(RainBowMode.class);
 	}
 	
+	public void slotsModeClick(View viewButton){
+		startActivity(SlotsMode.class);
+	}
+	
+	public void howtoplayModeClick(View viewButton){
+		startActivity(HowToPlayMode.class);
+	}
+	
 	private void startActivity(Class<?> activtyClass){
 		Intent myIntent = new Intent(this, activtyClass);
 		startActivity(myIntent);
+		this.finish();
 	}
 	
 	public void quitGameClick(View viewButton){
-		onBackPressed();
+		super.onBackPressed();
 	}
 
 }

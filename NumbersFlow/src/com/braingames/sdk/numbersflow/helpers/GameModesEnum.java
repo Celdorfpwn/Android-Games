@@ -2,7 +2,9 @@ package com.braingames.sdk.numbersflow.helpers;
 
 public enum GameModesEnum {
 	CLASSIC ("Classic"),
-	RAINBOW ("Rainbow");
+	RAINBOW ("Rainbow"),
+	HOWTOPLAY ("HOWTOPLAY"),
+	SLOTS ("SLOTS");
 	
     private final String name;       
 

@@ -37,6 +37,18 @@
             android:label="@string/app_name"
             android:noHistory="true"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".SlotsMode"
+            android:configChanges="orientation"
+            android:label="@string/app_name"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HowToPlayMode"
+            android:configChanges="orientation"
+            android:label="@string/app_name"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

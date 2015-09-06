@@ -14,8 +14,11 @@ public class ButtonsRainbowEffects {
 
 	private ArrayList<RainbowEffect> _effects;
 	
-	public ButtonsRainbowEffects() {
+	private LayoutRainbowEffect _layoutEffect;
+	
+	public ButtonsRainbowEffects(View layout) {
 		_effects = new ArrayList<RainbowEffect>();
+		_layoutEffect = new LayoutRainbowEffect(layout);
 	}
 	
 
@@ -26,20 +29,25 @@ public class ButtonsRainbowEffects {
 			_effects.add(effect);
 			effect.start();
 		}
+		
+		_layoutEffect.start();
 	}
 
 	public void stop() {
 		for(RainbowEffect effect : _effects){
 			effect.stop();
 		}
+		_layoutEffect.stop();
 	}
 
-	public void restart(ArrayList<View> buttons) {
+	public void restart(ArrayList<View> buttons,View layout) {
 		for(int index = 0; index<buttons.size();index++){
 			RainbowEffect effect = _effects.get(index);
 			effect.update(buttons.get(index));
 			effect.start();
 		}
+		_layoutEffect.update(layout);
+		_layoutEffect.start();
 	}
 
 	protected class RainbowEffect {
@@ -81,6 +89,45 @@ public class ButtonsRainbowEffects {
 
 		public void update(View button) {
 			_button = button;
+		}
+	}
+	
+	protected class LayoutRainbowEffect {
+
+		private View _layout;
+
+		private CountDownTimer _timer;
+		
+		private Random _random;
+
+		public LayoutRainbowEffect(View layout) {
+			_layout = layout;
+			_random = new Random();
+			_timer = new CountDownTimer(300000, 50) {
+				@Override
+				public void onTick(long arg0) {
+					int color = Color.argb(255, _random.nextInt(256), _random.nextInt(256), _random.nextInt(256));   
+					_layout.setBackgroundColor(color);
+				}
+
+				@Override
+				public void onFinish() {
+					_layout.setBackgroundResource(R.drawable.background);
+				}
+			};
+		}
+		
+		public void start(){
+			_layout.setBackgroundResource(0);
+			_timer.start();
+		}
+		
+		public void stop(){
+			_timer.cancel();
+		}
+
+		public void update(View button) {
+			_layout = button;
 		}
 	}
 }

@@ -12,4 +12,6 @@
     <string name="topScores">Top scores</string>
     <string name="classic">Classic</string>
     <string name="disco">Disco</string>
+    <string name="howtoplay">How to play</string>
+    <string name="slots">Slots</string>
 </resources>

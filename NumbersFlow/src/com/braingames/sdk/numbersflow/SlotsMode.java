@@ -1,12 +1,7 @@
 package com.braingames.sdk.numbersflow;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,18 +9,13 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.braingames.sdk.numbersflow.helpers.CountDowner;
+import com.braingames.sdk.numbersflow.helpers.Animations;
 import com.braingames.sdk.numbersflow.helpers.GameButtonsEffectsCreator;
 import com.braingames.sdk.numbersflow.helpers.GameModesEnum;
-import com.braingames.sdk.numbersflow.helpers.NumbersFactory;
-import com.braingames.sdk.numbersflow.helpers.Score;
-import com.braingames.sdk.numbersflow.helpers.ScoreDatabase;
-import com.braingames.sdk.numbersflow.helpers.SoundPlayer;
 
-public class ClassicMode extends GameMode {
+public class SlotsMode extends GameMode {
 
 	private GameButtonsEffectsCreator _buttonEffects;
-
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -35,6 +25,20 @@ public class ClassicMode extends GameMode {
 	protected void initializeGame() {
 		super.initializeGame();
 		_buttonEffects = new GameButtonsEffectsCreator(_gameButtons);
+		addAnimation();
+	}
+
+	private void addAnimation() {
+		TableLayout table = (TableLayout) findViewById(R.id.game_table);
+		for (int index = 0; index < table.getChildCount(); index++) {
+			TableRow row = (TableRow) table.getChildAt(index);
+			if (index % 2 == 0) {
+				Animations.rightInLeftOut(row);
+			} else {
+				Animations.leftInRightOut(row);
+			}
+		}
+
 	}
 
 	public void resetGame(View viewButton) {
@@ -47,8 +51,8 @@ public class ClassicMode extends GameMode {
 		Integer number = Integer.parseInt(button.getText().toString());
 		if (_numbersFactory.validateNumber(number)) {
 			_soundPlayer.playRight();
-			_buttonEffects.correctEffect(button,Integer.toString(_numbersFactory.nextNumber()
-					.intValue()));
+			_buttonEffects.correctEffect(button,
+					Integer.toString(_numbersFactory.nextNumber().intValue()));
 			_countDowner.addSeconds(1);
 
 		} else {
@@ -57,12 +61,12 @@ public class ClassicMode extends GameMode {
 			_countDowner.removeSeconds(1);
 		}
 	}
-	
-	protected void endGame(){
-		
+
+	protected void endGame() {
+
 	}
-	
-	protected void replayGame(){
+
+	protected void replayGame() {
 		_buttonEffects.update(_gameButtons);
 	}
 
@@ -74,9 +78,8 @@ public class ClassicMode extends GameMode {
 		_countDowner.reset();
 	}
 
-	
 	protected void setGameModeEnum() {
-		_gameMode = GameModesEnum.CLASSIC;
+		_gameMode = GameModesEnum.SLOTS;
 	}
 
 }

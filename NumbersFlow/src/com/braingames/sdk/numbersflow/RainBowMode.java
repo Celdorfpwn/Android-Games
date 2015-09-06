@@ -33,7 +33,7 @@ public class RainBowMode extends GameMode{
 
 	protected void initializeGame() {
 		super.initializeGame();
-		_buttonEffects = new ButtonsRainbowEffects();
+		_buttonEffects = new ButtonsRainbowEffects(findViewById(R.id.game_layout));
 		_buttonEffects.start(_gameButtons);
 		_soundPlayer.playRainbow();
 	}
@@ -59,34 +59,26 @@ public class RainBowMode extends GameMode{
 			_countDowner.removeSeconds(1);
 		}
 	}
-
-	public void showFinalScore() {
+	
+	protected void endGame(){
 		_buttonEffects.stop();
 		_soundPlayer.stopRainbow();
-		setContentView(R.layout.score_page);
-		TextView score = (TextView) findViewById(R.id.counterTextView);
-		_database.addContact(new Score(Integer.toString((_numbersFactory
-				.getScore())), GameModesEnum.RAINBOW.toString()));
-		score.setText("Number " + _numbersFactory.getScore());
-		_gameButtons = null;
-		_soundPlayer.finishSounds();
-		populateScoresTable(_numbersFactory.getScore().intValue());
-
 	}
+	
+    protected void replayGame(){
+    	_buttonEffects.restart(_gameButtons,findViewById(R.id.game_layout));
+    	_soundPlayer.playRainbow();
+    }
+	
 
-	public void replayClick(View viewButton) {
-		setContentView(R.layout.game_page);
-		initializeButtonsList();
-		initializeButtonsText();
-		_buttonEffects.restart(_gameButtons);
-		_countDowner.restart((TextView) findViewById(R.id.counterTextView));
-		_countDowner.reset();
-		_soundPlayer.playRainbow();
-	}
 	
 	public void onBackPressed() {
 		super.onBackPressed();
 		_soundPlayer.stopRainbow();
+	}
+
+	protected void setGameModeEnum() {
+		_gameMode = GameModesEnum.RAINBOW;
 	}
 
 }

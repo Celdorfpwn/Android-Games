@@ -33,6 +33,18 @@
                 android:layout_height="wrap_content"
                 android:onClick="rainbowModeClick"
                 android:text="@string/disco" />
+            
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="slotsModeClick"
+                android:text="@string/slots" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="howtoplayModeClick"
+                android:text="@string/howtoplay" />
 
             <Button
                 android:layout_width="match_parent"
@@ -47,4 +59,5 @@
         android:layout_height="fill_parent"
         android:layout_weight="0.15" >
     </RelativeLayout>
+
 </LinearLayout>
