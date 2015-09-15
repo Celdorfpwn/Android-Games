@@ -23,38 +23,34 @@
             android:orientation="vertical" >
 
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/MenuButton"
                 android:onClick="classicModeClick"
                 android:text="@string/classic" />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="scoresTableClick"
-                android:text="@string/scoresTable" />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="rainbowModeClick"
-                android:visibility="gone"
-                android:text="@string/disco" />
-            
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="slotsModeClick"
-                android:visibility="gone"
-                android:text="@string/slots" />
 
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/MenuButton"
+                android:onClick="scoresTableClick"
+                android:text="@string/scoresTable" />
+
+            <Button
+                style="@style/MenuButton"
+                android:onClick="rainbowModeClick"
+                android:text="@string/disco"
+                android:visibility="gone" />
+
+            <Button
+                style="@style/MenuButton"
+                android:onClick="slotsModeClick"
+                android:text="@string/slots"
+                android:visibility="gone" />
+
+            <Button
+                style="@style/MenuButton"
                 android:onClick="howtoplayModeClick"
                 android:text="@string/howtoplay" />
 
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/MenuButton"
                 android:onClick="quitGameClick"
                 android:text="@string/quit" />
         </LinearLayout>

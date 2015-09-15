@@ -26,6 +26,12 @@
     <item name="android:textSize">20sp</item>
     <item name="android:textStyle">bold</item>
 </style>
+<style name="MenuButton">
+    <item name="android:background">@drawable/menu_button</item>
+    <item name="android:layout_margin">5dp</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+</style>
 
 <style name="ScoreRow">
     <item name="android:layout_width">match_parent</item>

@@ -55,7 +55,10 @@ public class CountDowner {
 		_isRunning = true;
 		start();
 	}
-
+	
+	public void end(){
+		_timer.cancel();
+	}
 	public void reset() {
 		_timer.cancel();
 		start();

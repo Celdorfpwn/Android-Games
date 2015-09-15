@@ -73,6 +73,7 @@ public abstract class GameMode extends Activity {
 	
 	public void showFinalScore() {
 		endGame();
+		_countDowner.end();
 		setContentView(R.layout.score_page);
 		TextView score = (TextView) findViewById(R.id.counterTextView);
 		_database.addContact(new Score(Integer.toString((_numbersFactory
@@ -147,6 +148,7 @@ public abstract class GameMode extends Activity {
 	}
 	
 	public void onBackPressed() {
+		_countDowner.end();
 		Intent myIntent = new Intent(this, MainActivity.class);
 		startActivity(myIntent);
 		super.onBackPressed();

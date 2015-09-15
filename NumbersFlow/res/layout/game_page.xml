@@ -22,9 +22,11 @@
                 android:id="@+id/counterTextView"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:textColor="@color/Red"
+                android:background="@drawable/counter_textview"
                 android:gravity="center"
+                android:textColor="@color/Red"
                 android:textSize="40sp" >
             </TextView>
         </TableRow>
@@ -44,8 +46,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1" >
 
-                <TableRow 
-                    style="@style/GameRow" >
+                <TableRow style="@style/GameRow" >
 
                     <Button style="@style/GameButton" >
                     </Button>
@@ -149,7 +150,9 @@
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_margin="2dp"
                 android:layout_weight="5"
+                android:background="@drawable/reset_button"
                 android:onClick="resetGame"
                 android:text="@string/reset"
                 android:textColor="@color/White" >
@@ -157,10 +160,12 @@
 
             <ImageButton
                 android:id="@+id/soundButton"
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
                 android:adjustViewBounds="true"
+                android:background="@drawable/reset_button"
                 android:onClick="soundClick"
                 android:padding="5dp"
                 android:scaleType="fitCenter"

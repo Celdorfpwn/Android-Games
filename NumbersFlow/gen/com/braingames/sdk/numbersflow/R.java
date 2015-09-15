@@ -24,6 +24,7 @@ public final class R {
         public static final int BlueViolet=0x7f05005a;
         public static final int Brown=0x7f05004e;
         public static final int BurlyWood=0x7f050034;
+        public static final int ButtonGray=0x7f05008c;
         public static final int CadetBlue=0x7f05006c;
         public static final int Chartreuse=0x7f050062;
         public static final int Chocolate=0x7f05003e;
@@ -154,12 +155,19 @@ public final class R {
     }
     public static final class drawable {
         public static final int background=0x7f020000;
-        public static final int disabled=0x7f020001;
-        public static final int enabled=0x7f020002;
-        public static final int game_button=0x7f020003;
-        public static final int game_button_right=0x7f020004;
-        public static final int game_button_wrong=0x7f020005;
-        public static final int ic_launcher=0x7f020006;
+        public static final int counter_textview=0x7f020001;
+        public static final int disabled=0x7f020002;
+        public static final int enabled=0x7f020003;
+        public static final int game_button=0x7f020004;
+        public static final int game_button_right=0x7f020005;
+        public static final int game_button_wrong=0x7f020006;
+        public static final int ic_launcher=0x7f020007;
+        public static final int menu_button=0x7f020008;
+        public static final int menu_button_pressed=0x7f020009;
+        public static final int menu_button_unpressed=0x7f02000a;
+        public static final int reset_button=0x7f02000b;
+        public static final int reset_button_pressed=0x7f02000c;
+        public static final int reset_button_unpressed=0x7f02000d;
     }
     public static final class id {
         public static final int counterTextView=0x7f080001;
@@ -230,8 +238,9 @@ public final class R {
          */
         public static final int AppTheme=0x7f070001;
         public static final int GameButton=0x7f070002;
-        public static final int GameRow=0x7f070005;
-        public static final int ScoreRow=0x7f070003;
-        public static final int ScoreTextView=0x7f070004;
+        public static final int GameRow=0x7f070006;
+        public static final int MenuButton=0x7f070003;
+        public static final int ScoreRow=0x7f070004;
+        public static final int ScoreTextView=0x7f070005;
     }
 }
