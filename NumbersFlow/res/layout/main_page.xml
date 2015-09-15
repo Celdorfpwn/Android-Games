@@ -27,17 +27,23 @@
                 android:layout_height="wrap_content"
                 android:onClick="classicModeClick"
                 android:text="@string/classic" />
-
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="scoresTableClick"
+                android:text="@string/scoresTable" />
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="rainbowModeClick"
+                android:visibility="gone"
                 android:text="@string/disco" />
             
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="slotsModeClick"
+                android:visibility="gone"
                 android:text="@string/slots" />
 
             <Button

@@ -69,7 +69,7 @@ public class GameButtonsEffectsCreator {
 
 				@Override
 				public void onFinish() {
-					_button.setBackgroundResource(R.color.Black);
+					_button.setBackgroundResource(R.drawable.game_button);
 					_isRunning = false;
 				}
 			};
@@ -110,7 +110,7 @@ public class GameButtonsEffectsCreator {
 				@Override
 				public void onFinish() {
 					((Button)_button).setText(_text);
-					_button.setBackgroundResource(R.color.Black);
+					_button.setBackgroundResource(R.drawable.game_button);
 					_isRunning = false;
 				}
 			};
@@ -119,7 +119,7 @@ public class GameButtonsEffectsCreator {
 
 		
 		protected int setEffectBackground() {
-			return R.color.Green;	
+			return R.drawable.game_button_right;	
 		}
 		
 		public void start(String text){
@@ -137,7 +137,7 @@ public class GameButtonsEffectsCreator {
 		}
 
 		protected int setEffectBackground() {
-			return R.color.Red;
+			return R.drawable.game_button_wrong;
 		}
 		
 	}

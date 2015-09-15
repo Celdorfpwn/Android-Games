@@ -109,7 +109,7 @@ public abstract class GameMode extends Activity {
 
 			for (int buttonIndex = 0; buttonIndex < row.getChildCount(); buttonIndex++) {
 				Button button = (Button)row.getChildAt(buttonIndex);
-				button.setTextSize(height/35);
+				button.setTextSize(height/40);
 				_gameButtons.add(row.getChildAt(buttonIndex));
 			}
 		}
@@ -149,5 +149,6 @@ public abstract class GameMode extends Activity {
 	public void onBackPressed() {
 		Intent myIntent = new Intent(this, MainActivity.class);
 		startActivity(myIntent);
+		super.onBackPressed();
 	}
 }

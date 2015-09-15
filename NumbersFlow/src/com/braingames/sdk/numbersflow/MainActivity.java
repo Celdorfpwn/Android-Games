@@ -20,6 +20,10 @@ public class MainActivity extends Activity {
 		startActivity(RainBowMode.class);
 	}
 	
+	public void scoresTableClick(View viewButton){
+		startActivity(ScoresTable.class);
+	}
+	
 	public void slotsModeClick(View viewButton){
 		startActivity(SlotsMode.class);
 	}
@@ -31,7 +35,7 @@ public class MainActivity extends Activity {
 	private void startActivity(Class<?> activtyClass){
 		Intent myIntent = new Intent(this, activtyClass);
 		startActivity(myIntent);
-		this.finish();
+		super.onBackPressed();
 	}
 	
 	public void quitGameClick(View viewButton){
