@@ -66,13 +66,7 @@ public class ClassicMode extends GameMode {
 		_buttonEffects.update(_gameButtons);
 	}
 
-	public void replayClick(View viewButton) {
-		setContentView(R.layout.game_page);
-		initializeButtonsList();
-		initializeButtonsText();
-		_countDowner.restart((TextView) findViewById(R.id.counterTextView));
-		_countDowner.reset();
-	}
+
 
 	
 	protected void setGameModeEnum() {
