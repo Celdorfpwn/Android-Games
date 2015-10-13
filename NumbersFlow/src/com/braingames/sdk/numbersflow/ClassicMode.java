@@ -26,7 +26,6 @@ public class ClassicMode extends GameMode {
 
 	private GameButtonsEffectsCreator _buttonEffects;
 
-
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		initializeGame();
@@ -34,7 +33,7 @@ public class ClassicMode extends GameMode {
 
 	protected void initializeGame() {
 		super.initializeGame();
-		_buttonEffects = new GameButtonsEffectsCreator(_gameButtons);
+		_buttonEffects = new GameButtonsEffectsCreator(_gameButtons,this);
 	}
 
 	public void resetGame(View viewButton) {
@@ -47,8 +46,7 @@ public class ClassicMode extends GameMode {
 		Integer number = Integer.parseInt(button.getText().toString());
 		if (_numbersFactory.validateNumber(number)) {
 			_soundPlayer.playRight();
-			_buttonEffects.correctEffect(button,Integer.toString(_numbersFactory.nextNumber()
-					.intValue()));
+			_buttonEffects.correctEffect(button, Integer.toString(_numbersFactory.nextNumber().intValue()));
 			_countDowner.addSeconds(1);
 
 		} else {
@@ -57,18 +55,16 @@ public class ClassicMode extends GameMode {
 			_countDowner.removeSeconds(1);
 		}
 	}
-	
-	protected void endGame(){
-		
+
+	public void showLastNumber() {
+		Integer lastNumber = _numbersFactory.getLastNumber();
+		_buttonEffects.EndGameEffect(lastNumber);
 	}
-	
-	protected void replayGame(){
+
+	protected void replayGame() {
 		_buttonEffects.update(_gameButtons);
 	}
 
-
-
-	
 	protected void setGameModeEnum() {
 		_gameMode = GameModesEnum.CLASSIC;
 	}

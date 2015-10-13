@@ -16,49 +16,70 @@ public class CountDowner {
 	private final int _start = 60;
 
 	private int _current;
-	
+
 	private boolean _isRunning = false;
+
+	public boolean _comboFlag = false;
+
+	private int _combo = 0;
+
+	private BonusCalculator _bonusCalculator;
 
 	public CountDowner(TextView textView, GameMode activity) {
 		_textView = textView;
 		_activity = activity;
-		
-		_timer = new CountDownTimer(30000000, 1000) {
+		_bonusCalculator = new BonusCalculator();
+		_timer = new CountDownTimer(30000000, 1100) {
 			public void onTick(long millisUntilFinished) {
-				if (_current <= 0) {
-					this.onFinish();
-				} else {
-					update();
-					_current--;
+				if (_isRunning) {
+					if (_current <= 0) {
+						_textView.setText("Game Over");
+						this.onFinish();
+					} else {
+
+						if (_comboFlag) {
+							update();
+						} else if (_combo > 3) {
+							updateCombo();
+						} else {
+							update();
+							_combo = 0;
+						}
+						_comboFlag = false;
+						_current--;
+					}
 				}
 			}
 
 			public void onFinish() {
-				_activity.showFinalScore();
+				_activity.showLastNumber();
 				_isRunning = false;
 			}
 		};
 	}
-	
-	public void setTextView(TextView textView){
+
+	public void setTextView(TextView textView) {
 		_textView = textView;
 	}
 
 	public void start() {
 		_current = _start;
+		_comboFlag = false;
 		_isRunning = true;
 		_timer.start();
 	}
-	
-	public void restart(TextView textView){
+
+	public void restart(TextView textView) {
 		_textView = textView;
 		_isRunning = true;
 		start();
 	}
-	
-	public void end(){
+
+	public void end() {
 		_timer.cancel();
+		_comboFlag = false;
 	}
+
 	public void reset() {
 		_timer.cancel();
 		start();
@@ -72,13 +93,26 @@ public class CountDowner {
 		}
 	}
 
+	private void updateCombo() {
+		int bonus = _bonusCalculator.calculateBonus(_combo);
+		_textView.setText(_combo + "X Combo! added " + bonus + " seconds");
+		_activity.playComboSound();
+		_current += bonus;
+		_comboFlag = false;
+		_combo = 0;
+	}
+
 	public void addSeconds(int seconds) {
 		_current += seconds;
+		_comboFlag = true;
+		_combo++;
 		update();
 	}
 
 	public void removeSeconds(int seconds) {
 		_current -= seconds;
+		_comboFlag = false;
+		_combo = 0;
 		update();
 	}
 

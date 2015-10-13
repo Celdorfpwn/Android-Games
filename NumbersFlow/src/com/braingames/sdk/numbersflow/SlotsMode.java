@@ -24,7 +24,7 @@ public class SlotsMode extends GameMode {
 
 	protected void initializeGame() {
 		super.initializeGame();
-		_buttonEffects = new GameButtonsEffectsCreator(_gameButtons);
+		_buttonEffects = new GameButtonsEffectsCreator(_gameButtons,this);
 		addAnimation();
 	}
 
@@ -62,7 +62,7 @@ public class SlotsMode extends GameMode {
 		}
 	}
 
-	protected void endGame() {
+	public void showLastNumber() {
 
 	}
 

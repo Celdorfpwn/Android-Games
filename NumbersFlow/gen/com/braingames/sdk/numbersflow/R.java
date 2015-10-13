@@ -16,6 +16,7 @@ public final class R {
         public static final int Aqua=0x7f05007c;
         public static final int Aquamarine=0x7f050061;
         public static final int Azure=0x7f05002a;
+        public static final int Background=0x7f05008d;
         public static final int Beige=0x7f050027;
         public static final int Bisque=0x7f05000d;
         public static final int Black=0x7f05008b;
@@ -154,20 +155,24 @@ public final class R {
         public static final int YellowGreen=0x7f050050;
     }
     public static final class drawable {
-        public static final int background=0x7f020000;
-        public static final int counter_textview=0x7f020001;
-        public static final int disabled=0x7f020002;
-        public static final int enabled=0x7f020003;
-        public static final int game_button=0x7f020004;
-        public static final int game_button_right=0x7f020005;
-        public static final int game_button_wrong=0x7f020006;
-        public static final int ic_launcher=0x7f020007;
-        public static final int menu_button=0x7f020008;
-        public static final int menu_button_pressed=0x7f020009;
-        public static final int menu_button_unpressed=0x7f02000a;
-        public static final int reset_button=0x7f02000b;
-        public static final int reset_button_pressed=0x7f02000c;
-        public static final int reset_button_unpressed=0x7f02000d;
+        public static final int button_correct=0x7f020000;
+        public static final int button_gresit=0x7f020001;
+        public static final int button_simplu=0x7f020002;
+        public static final int counter_textview=0x7f020003;
+        public static final int disabled=0x7f020004;
+        public static final int enabled=0x7f020005;
+        public static final int fundal=0x7f020006;
+        public static final int game_button=0x7f020007;
+        public static final int game_button_right=0x7f020008;
+        public static final int game_button_wrong=0x7f020009;
+        public static final int ic_launcher=0x7f02000a;
+        public static final int last_button=0x7f02000b;
+        public static final int menu_button=0x7f02000c;
+        public static final int menu_button_pressed=0x7f02000d;
+        public static final int menu_button_unpressed=0x7f02000e;
+        public static final int reset_button=0x7f02000f;
+        public static final int reset_button_pressed=0x7f020010;
+        public static final int reset_button_unpressed=0x7f020011;
     }
     public static final class id {
         public static final int counterTextView=0x7f080001;
@@ -189,9 +194,10 @@ public final class R {
         public static final int scores_table=0x7f030004;
     }
     public static final class raw {
-        public static final int correct=0x7f040000;
-        public static final int rainbowsong=0x7f040001;
-        public static final int wrong=0x7f040002;
+        public static final int combo=0x7f040000;
+        public static final int correct=0x7f040001;
+        public static final int rainbowsong=0x7f040002;
+        public static final int wrong=0x7f040003;
     }
     public static final class string {
         public static final int app_name=0x7f060000;

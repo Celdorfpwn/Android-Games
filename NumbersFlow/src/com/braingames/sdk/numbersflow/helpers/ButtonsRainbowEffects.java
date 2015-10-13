@@ -112,7 +112,7 @@ public class ButtonsRainbowEffects {
 
 				@Override
 				public void onFinish() {
-					_layout.setBackgroundResource(R.drawable.background);
+					//_layout.setBackgroundResource(R.drawable.background_new);
 				}
 			};
 		}

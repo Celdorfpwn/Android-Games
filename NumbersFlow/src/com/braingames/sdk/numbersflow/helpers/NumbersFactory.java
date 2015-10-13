@@ -38,6 +38,10 @@ public class NumbersFactory {
 			return 1;
 		}
 	}
+	
+	public Integer getLastNumber(){
+		return _nextNumber;
+	}
 
 	public Integer nextNumber() {
 		if (_currentList.isEmpty()) {

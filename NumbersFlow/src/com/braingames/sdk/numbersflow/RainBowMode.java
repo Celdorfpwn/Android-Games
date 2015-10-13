@@ -60,7 +60,7 @@ public class RainBowMode extends GameMode{
 		}
 	}
 	
-	protected void endGame(){
+	public void showLastNumber(){
 		_buttonEffects.stop();
 		_soundPlayer.stopRainbow();
 	}

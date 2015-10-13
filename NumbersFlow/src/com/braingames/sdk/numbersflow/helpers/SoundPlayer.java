@@ -10,6 +10,7 @@ public class SoundPlayer {
 	private MediaPlayer _rightPlayer;
 	private MediaPlayer _wrongPlayer;
 	private MediaPlayer _rainbowPlayer;
+	private MediaPlayer _comboPlayer;
 
 	private ImageButton _soundButton;
 
@@ -25,6 +26,7 @@ public class SoundPlayer {
 		_rightPlayer = MediaPlayer.create(context, R.raw.correct);
 		_wrongPlayer = MediaPlayer.create(context, R.raw.wrong);
 		_rainbowPlayer = MediaPlayer.create(context, R.raw.rainbowsong);
+		_comboPlayer = MediaPlayer.create(context, R.raw.combo);
 		_rainbowPlayer.setVolume(0.3f, 0.4f);
 		initSoundButton();
 	}
@@ -78,6 +80,10 @@ public class SoundPlayer {
 
 	public void playRight() {
 		play(_rightPlayer);
+	}
+	
+	public void playCombo(){
+		play(_comboPlayer);
 	}
 
 	public void playWrong() {
