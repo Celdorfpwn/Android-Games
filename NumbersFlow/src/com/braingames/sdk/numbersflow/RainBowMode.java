@@ -1,24 +1,14 @@
 package com.braingames.sdk.numbersflow;
 
-import java.util.ArrayList;
-import java.util.List;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
+
 
 import com.braingames.sdk.numbersflow.helpers.ButtonsRainbowEffects;
-import com.braingames.sdk.numbersflow.helpers.CountDowner;
-import com.braingames.sdk.numbersflow.helpers.GameButtonsEffectsCreator;
 import com.braingames.sdk.numbersflow.helpers.GameModesEnum;
-import com.braingames.sdk.numbersflow.helpers.NumbersFactory;
-import com.braingames.sdk.numbersflow.helpers.Score;
-import com.braingames.sdk.numbersflow.helpers.ScoreDatabase;
-import com.braingames.sdk.numbersflow.helpers.SoundPlayer;
+
 
 public class RainBowMode extends GameMode{
 

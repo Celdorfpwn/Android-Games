@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 import com.braingames.sdk.numbersflow.GameMode;
 import com.braingames.sdk.numbersflow.R;
-import com.braingames.sdk.numbersflow.R.color;
 
+import android.R.color;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
@@ -104,7 +104,7 @@ public class GameButtonsEffectsCreator {
 
 				@Override
 				public void onFinish() {
-					_button.setBackgroundResource(R.drawable.game_button);
+					_button.setBackgroundResource(R.drawable.buttonsimplu);
 					_isRunning = false;
 				}
 			};
@@ -145,7 +145,7 @@ public class GameButtonsEffectsCreator {
 				@Override
 				public void onFinish() {
 					((Button) _button).setText(_text);
-					_button.setBackgroundResource(R.drawable.game_button);
+					_button.setBackgroundResource(R.drawable.buttonsimplu);
 					_isRunning = false;
 				}
 			};
@@ -153,7 +153,7 @@ public class GameButtonsEffectsCreator {
 		}
 
 		protected int setEffectBackground() {
-			return R.drawable.game_button_right;
+			return R.drawable.buttoncorrect;
 		}
 
 		public void start(String text) {
@@ -170,7 +170,7 @@ public class GameButtonsEffectsCreator {
 		}
 
 		protected int setEffectBackground() {
-			return R.drawable.game_button_wrong;
+			return R.drawable.buttongresit;
 		}
 
 	}

@@ -3,12 +3,10 @@ package com.braingames.sdk.numbersflow;
 import java.util.Random;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.braingames.sdk.numbersflow.helpers.GameButtonsEffectsCreator;
 import com.braingames.sdk.numbersflow.helpers.GameModesEnum;

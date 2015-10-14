@@ -2,7 +2,6 @@ package com.braingames.sdk.numbersflow;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Movie;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 

@@ -96,18 +96,28 @@ public abstract class GameMode extends Activity {
 	protected void initializeButtonsList() {
 		TableLayout gameTable = (TableLayout) findViewById(R.id.game_table);
 		TextView counterText = (TextView) findViewById(R.id.counterTextView);
+		
+		
 		_gameButtons = new ArrayList<View>();
 		DisplayMetrics displaymetrics = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-		int height = displaymetrics.heightPixels;
+		int width = displaymetrics.widthPixels;
+		int size = width / 6;
 
-		counterText.setTextSize(height / 40);
+		counterText.setTextSize(width / 20);
 		for (int rowIndex = 0; rowIndex < gameTable.getChildCount(); rowIndex++) {
 			TableRow row = (TableRow) gameTable.getChildAt(rowIndex);
-
+					
 			for (int buttonIndex = 0; buttonIndex < row.getChildCount(); buttonIndex++) {
-				Button button = (Button) row.getChildAt(buttonIndex);
-				button.setTextSize(height / 40);
+				Button button = (Button) row.getChildAt(buttonIndex);								
+				button.setTextSize(width / 40);
+				
+				TableRow.LayoutParams params = new TableRow.LayoutParams(size,size);
+				params.leftMargin = size /10;
+				params.rightMargin = size / 10;
+				
+				button.setLayoutParams(params);
+				
 				_gameButtons.add(row.getChildAt(buttonIndex));
 			}
 		}
@@ -122,7 +132,6 @@ public abstract class GameMode extends Activity {
 		textViews.add((TextView) findViewById(R.id.score4));
 		textViews.add((TextView) findViewById(R.id.score5));
 
-		TableLayout table = (TableLayout) findViewById(R.id.table_scores);
 
 		List<Score> scores = _database.getFirstFiveScores(_gameMode);
 		int index = 0;

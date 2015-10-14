@@ -1,6 +1,5 @@
 package com.braingames.sdk.numbersflow;
 
-import java.util.ArrayList;
 
 import android.os.Bundle;
 import android.view.View;

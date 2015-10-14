@@ -153,11 +153,12 @@ public final class R {
         public static final int WhiteSmoke=0x7f050026;
         public static final int Yellow=0x7f050003;
         public static final int YellowGreen=0x7f050050;
+        public static final int transparent=0x7f05008e;
     }
     public static final class drawable {
-        public static final int button_correct=0x7f020000;
-        public static final int button_gresit=0x7f020001;
-        public static final int button_simplu=0x7f020002;
+        public static final int buttoncorrect=0x7f020000;
+        public static final int buttongresit=0x7f020001;
+        public static final int buttonsimplu=0x7f020002;
         public static final int counter_textview=0x7f020003;
         public static final int disabled=0x7f020004;
         public static final int enabled=0x7f020005;
