@@ -104,7 +104,7 @@ public class GameButtonsEffectsCreator {
 
 				@Override
 				public void onFinish() {
-					_button.setBackgroundResource(R.drawable.buttonsimplu);
+					_button.setBackgroundResource(R.color.GameButtonBack);
 					_isRunning = false;
 				}
 			};
@@ -145,7 +145,7 @@ public class GameButtonsEffectsCreator {
 				@Override
 				public void onFinish() {
 					((Button) _button).setText(_text);
-					_button.setBackgroundResource(R.drawable.buttonsimplu);
+					_button.setBackgroundResource(R.color.GameButtonBack);
 					_isRunning = false;
 				}
 			};

@@ -60,6 +60,7 @@ public final class R {
         public static final int ForestGreen=0x7f050078;
         public static final int Fuchsia=0x7f05001c;
         public static final int Gainsboro=0x7f050036;
+        public static final int GameButtonBack=0x7f05008f;
         public static final int GhostWhite=0x7f050024;
         public static final int Gold=0x7f050011;
         public static final int Goldenrod=0x7f050039;

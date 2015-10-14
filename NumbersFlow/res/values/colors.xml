@@ -143,4 +143,5 @@
  <color name="ButtonGray">#66808080</color>
  <color name="Background">#66808080</color>
  <color name="transparent">#00000000</color>
+ <color name="GameButtonBack">#80000000</color>
 </resources>

@@ -5,8 +5,10 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -98,25 +100,56 @@ public abstract class GameMode extends Activity {
 		TextView counterText = (TextView) findViewById(R.id.counterTextView);
 		
 		
+		
+		
 		_gameButtons = new ArrayList<View>();
 		DisplayMetrics displaymetrics = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-		int width = displaymetrics.widthPixels;
-		int size = width / 6;
-
+		int width = displaymetrics.widthPixels-20;
+		int buttonWidth = (width-20)  / 5;
+		
+		int height = displaymetrics.heightPixels;
+		
+		int counterHeight = (height * 10/100);
+		
+		int tableHeight = (height * 65/100) - 50;
+		
+		TableRow.LayoutParams counterParams = new TableRow.LayoutParams(width, counterHeight);
+		counterParams.leftMargin = 10;
+		counterParams.rightMargin = 10;
+		counterParams.topMargin = 10;
+		counterParams.bottomMargin = 10;
+		counterText.setLayoutParams(counterParams);
+		
+		TableRow.LayoutParams tableParams = new TableRow.LayoutParams(width, tableHeight);
+		tableParams.leftMargin = 10;
+		tableParams.rightMargin = 10;
+		tableParams.topMargin = 25;
+		tableParams.bottomMargin = 25;
+		
+		gameTable.setLayoutParams(tableParams);
+		
+		int rowHeight = tableHeight/5;
+		int buttonHeight = rowHeight-4;
+		
 		counterText.setTextSize(width / 20);
 		for (int rowIndex = 0; rowIndex < gameTable.getChildCount(); rowIndex++) {
 			TableRow row = (TableRow) gameTable.getChildAt(rowIndex);
-					
+			
+			TableRow.LayoutParams params = new TableRow.LayoutParams(width,rowHeight);
+			
+			row.setLayoutParams(params);
+			
 			for (int buttonIndex = 0; buttonIndex < row.getChildCount(); buttonIndex++) {
 				Button button = (Button) row.getChildAt(buttonIndex);								
-				button.setTextSize(width / 40);
+				button.setTextSize(buttonWidth / 3.5f);
 				
-				TableRow.LayoutParams params = new TableRow.LayoutParams(size,size);
-				params.leftMargin = size /10;
-				params.rightMargin = size / 10;
-				
-				button.setLayoutParams(params);
+				TableRow.LayoutParams buttonParams = new TableRow.LayoutParams(buttonWidth,buttonHeight );
+				buttonParams.leftMargin = 2;
+				buttonParams.rightMargin = 2;
+				buttonParams.topMargin = 2;
+				buttonParams.bottomMargin = 2;
+				button.setLayoutParams(buttonParams);
 				
 				_gameButtons.add(row.getChildAt(buttonIndex));
 			}
